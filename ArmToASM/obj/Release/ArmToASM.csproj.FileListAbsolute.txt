@@ -1,8 +1,0 @@
-E:\visualStudio\ArmToASM\ArmToASM\bin\Release\ArmToASM.exe.config
-E:\visualStudio\ArmToASM\ArmToASM\bin\Release\ArmToASM.exe
-E:\visualStudio\ArmToASM\ArmToASM\bin\Release\ArmToASM.pdb
-E:\visualStudio\ArmToASM\ArmToASM\obj\Release\ArmToASM.Form1.resources
-E:\visualStudio\ArmToASM\ArmToASM\obj\Release\ArmToASM.Properties.Resources.resources
-E:\visualStudio\ArmToASM\ArmToASM\obj\Release\ArmToASM.csproj.GenerateResource.Cache
-E:\visualStudio\ArmToASM\ArmToASM\obj\Release\ArmToASM.exe
-E:\visualStudio\ArmToASM\ArmToASM\obj\Release\ArmToASM.pdb
