@@ -2,8 +2,8 @@ E:\visualStudio\ArmToASM\ArmToASM\bin\Debug\ArmToASM.exe.config
 E:\visualStudio\ArmToASM\ArmToASM\bin\Debug\ArmToASM.exe
 E:\visualStudio\ArmToASM\ArmToASM\bin\Debug\ArmToASM.pdb
 E:\visualStudio\ArmToASM\ArmToASM\obj\Debug\ArmToASM.csprojResolveAssemblyReference.cache
-E:\visualStudio\ArmToASM\ArmToASM\obj\Debug\ArmToASM.Form1.resources
 E:\visualStudio\ArmToASM\ArmToASM\obj\Debug\ArmToASM.Properties.Resources.resources
 E:\visualStudio\ArmToASM\ArmToASM\obj\Debug\ArmToASM.csproj.GenerateResource.Cache
 E:\visualStudio\ArmToASM\ArmToASM\obj\Debug\ArmToASM.exe
 E:\visualStudio\ArmToASM\ArmToASM\obj\Debug\ArmToASM.pdb
+E:\visualStudio\ArmToASM\ArmToASM\obj\Debug\ArmToASM.MainForm.resources

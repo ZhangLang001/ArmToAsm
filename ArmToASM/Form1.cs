@@ -11,21 +11,19 @@ namespace ArmToASM
         {
             InitializeComponent();
         }
-        private ProcessStartInfo compeler;
-        private Process outText;
-        public string outpotly;
+
         private void convert_Click(object sender, EventArgs e)
         {
+            var outpotly = "";
             var instructionText = instruction.Text;
             if (string.IsNullOrEmpty(instructionText))
             {
                 error_tip.Text = "请输入指令哦";
                 return;
-               
             }
-
-            this.compeler = new ProcessStartInfo();
-            var processStartInfo = this.compeler;
+            error_tip.Text = "";
+            var compeler = new ProcessStartInfo();
+            var processStartInfo = compeler;
             processStartInfo.FileName = "as.exe";
             processStartInfo.UseShellExecute = false;
             processStartInfo.RedirectStandardOutput = true;
@@ -36,43 +34,34 @@ namespace ArmToASM
             result_tip.Text = "正在努力执行中...";
             try
             {
-                this.compeler.Arguments = "-mthumb tmp -al";
-                this.outText = Process.Start(this.compeler);
-                var process = this.outText;
+                compeler.Arguments = "-mthumb tmp -al";
+                var outText = Process.Start(compeler);
+                var process = outText;
                 if (process != null && !process.HasExited)
                 {
-                    this.outpotly = process.StandardOutput.ReadToEnd();
+                    outpotly = process.StandardOutput.ReadToEnd();
                 }
-                if (this.outpotly.Contains("Error:"))
+                if(string.Equals(outpotly.Substring(38, 4),"    "))
                 {
-                    error_tip.Text = "请检查指令是否输入正确哦";
-                    File.Delete("tmp");
+                    error_tip.Text = "请确认指令是否正确";
                     return;
                 }
-                thumb_text.Text = this.outpotly.Substring(38, 4);
-            }
-            catch (Exception exception)
-            {
-                // ignored
-                File.Delete("tmp");
-                error_tip.Text = "转换出现异常";
-            }
-            try
-            {
-                this.compeler.Arguments = "tmp -al";
-                this.outText = Process.Start(this.compeler);
-                var process = this.outText;
+                thumb_text.Text = outpotly.Substring(38, 4);
+                compeler.Arguments = "tmp -al";
+                outText = Process.Start(compeler);
+                process = outText;
                 if (process != null && !process.HasExited)
                 {
-                    this.outpotly = process.StandardOutput.ReadToEnd();
+                    outpotly = process.StandardOutput.ReadToEnd();
                 }
-                arm_text.Text = this.outpotly.Substring(38, 8);
+                arm_text.Text = outpotly.Substring(38, 8);
             }
-            catch (Exception exception)
+            catch (Exception)
             {
                 // ignored
                 error_tip.Text = "转换出现异常";
                 File.Delete("tmp");
+                return;
             }
             result_tip.Text = "执行完成";
             File.Delete("tmp");
@@ -83,12 +72,8 @@ namespace ArmToASM
             if (!File.Exists("as.exe"))
             {
                 error_tip.Text = "请检测根目录下是否包含as.exe程序";
-                
             }
-            this.FormBorderStyle=FormBorderStyle.FixedSingle;
-           
-
-
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
         private void clear_Click(object sender, EventArgs e)
